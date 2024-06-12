@@ -6,7 +6,7 @@ const AuthPage = (props) => {
       const { value } = e.target[0];
       
       axios
-      .post("https://91.238.251.177:70/authenticate", { username: value })
+      .post("/authenticate", { username: value })
       .then((r) => props.onAuth({ ...r.data, secret: value }))
       .catch((e) => console.log("Auth Error", e));
     };
